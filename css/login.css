@@ -1,0 +1,218 @@
+/* login.css */
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+/* Corps de la page pour centrer le formulaire */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0); /* Fond transparent */
+    border: 1px solid #ffffff; /* Bordure blanche de 1px */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); /* Légère ombre pour contraste */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    margin: 0 auto; /* Centrer le formulaire */
+}
+
+/* Titre */
+h2 {
+    margin-bottom: 40px; /* Augmente l'espace entre le titre et le texte "Nom d'utilisateur" */
+    color: #e0e0e0;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Label et champs d'entrée */
+label {
+    margin-bottom: 10px; /* Espace entre le label et la zone de saisie */
+    width: 100%;
+    text-align: left;
+    font-size: 1rem; /* Taille de texte relative */
+    color: #e0e0e0;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent pour les champs */
+    color: #e0e0e0;
+    border: 1px solid #ffffff; /* Bordure blanche de 1px */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #dddddd; /* Couleur du texte du placeholder */
+}
+
+/* Bouton de connexion */
+button {
+    background-color: #00e676;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333333;
+    width: auto; /* Ajuste la largeur du bouton */
+    padding: 10px 20px; /* Ajuste la taille du bouton */
+}
+
+button:hover {
+    background-color: #00c853;
+}
+
+/* Paragraphes et liens */
+p {
+    color: #e0e0e0;
+    margin: 10px 0; /* Ajout de marge pour espacer les liens */
+}
+
+p a {
+    color: #00e676;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Messages d'erreur */
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Effet "glowing" pour le titre */
+.glowing-btn {
+    position: relative;
+    color: hsl(120, 100%, 75%); /* Vert clair */
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid hsl(120, 100%, 75%);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-align: center;
+    box-shadow: inset 0px 0px 0.5em 0px hsl(120, 100%, 75%),
+                0px 0px 0.5em 0px hsl(120, 100%, 75%);
+    animation: border-flicker 2s linear infinite;
+    margin-bottom: 40px; /* Augmente l'espace entre le titre et le texte "Nom d'utilisateur" */
+}
+
+.glowing-txt {
+    text-align: center;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+                 0 0 0.45em hsl(120, 100%, 75%);
+    animation: text-flicker 3s linear infinite;
+}
+
+/* Animation for glowing effect */
+@keyframes border-flicker {
+    0% {
+        opacity: 0.1;
+    }
+    2% {
+        opacity: 1;
+    }
+    4% {
+        opacity: 0.1;
+    }
+    8% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive media queries */
+
+/* Pour les tablettes et smartphones larges (600px à 900px) */
+@media only screen and (max-width: 900px) {
+    .login-container {
+        max-width: 80%; /* Utilise 80% de la largeur de l'écran */
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    input, button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour les smartphones (600px et moins) */
+@media only screen and (max-width: 600px) {
+    .login-container {
+        max-width: 100%; /* Utilise toute la largeur de l'écran */
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+
+/* Pour les petits téléphones (400px et moins) */
+@media only screen and (max-width: 400px) {
+    .login-container {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    input, button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+}

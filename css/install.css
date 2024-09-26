@@ -1,0 +1,170 @@
+/* install.css */
+
+/* Styles spécifiques à la page d'installation */
+.install-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+    border: 1px solid #ffffff; /* Bordure blanche */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); /* Ombre légère */
+    transition: all 0.3s ease; /* Transition fluide */
+}
+
+h2 {
+    color: #e0e0e0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Texte d'introduction */
+.install-intro {
+    color: #46f10f; /* Couleur verte pour le texte d'introduction */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Texte explicatif sur l'adresse de la BDD */
+.install-note {
+    color: #0ff1ee; /* Bleu cyan clair */
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Titre de la section administrateur */
+.admin-section-title {
+    color: #ff4d4d; /* Rouge vif */
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Avertissement sur les majuscules/minuscules */
+.admin-warning {
+    color: #f1ad0f; /* Couleur jaune-orange */
+    font-style: italic;
+    text-align: center;
+    font-size: 0.85rem; /* Taille plus petite */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    color: #e0e0e0;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #00e676;
+    color: #333333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00c853;
+}
+
+/* Style pour le lien "connecter" */
+.connect-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #00e676;
+    transition: color 0.3s ease;
+}
+
+.connect-link:hover {
+    color: #0ff1ee; /* Changement de couleur au survol */
+}
+
+/* Centrage du bouton Installer */
+.form-footer {
+    text-align: center;
+}
+
+/* Responsive media queries */
+
+/* Pour les tablettes et smartphones larges (600px à 900px) */
+@media only screen and (max-width: 900px) {
+    .install-container {
+        max-width: 80%; /* Utilise 80% de la largeur de l'écran */
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    input, button {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour les smartphones (600px et moins) */
+@media only screen and (max-width: 600px) {
+    .install-container {
+        max-width: 100%; /* Utilise toute la largeur de l'écran */
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+
+/* Pour les petits téléphones (400px et moins) */
+@media only screen and (max-width: 400px) {
+    .install-container {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    input, button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Message d'erreur en rouge */
+.error-message {
+    color: #ff4d4d; /* Rouge bien visible sur un fond sombre */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}

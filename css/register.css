@@ -1,0 +1,123 @@
+/* register.css */
+@import url('common.css');
+
+.register-container {
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; /* Centrer le formulaire */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    position: relative;
+    z-index: 2;
+}
+
+.closed-message {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    background-color: #00e676;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #00c853;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+label {
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #00e676;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333333;
+}
+
+button:hover {
+    background-color: #00c853;
+}
+
+.note {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+p {
+    color: #e0e0e0;
+}
+
+p a {
+    color: #00e676;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    .register-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input, button, select {
+        padding: 8px;
+    }
+}

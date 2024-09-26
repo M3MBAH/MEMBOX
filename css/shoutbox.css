@@ -1,0 +1,265 @@
+/* shoutbox.css */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+
+/* Fond de page avec pattern */
+body {
+    background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+}
+
+.shoutbox-container {
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale pour grands écrans */
+    height: 80vh; /* Hauteur relative à la hauteur de la fenêtre (viewport) */
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto; /* Centrer la shoutbox */
+    text-align: left; /* Alignement des messages à gauche */
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif; /* Police Raleway */
+    color: #00FF7F; /* Vert clair */
+    font-size: 5vw;
+    text-shadow: 0 0 3vw #00E676;
+    animation: flux 2s linear infinite;
+    -moz-animation: flux 2s linear infinite;
+    -webkit-animation: flux 2s linear infinite;
+    -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #00C853, 0 0 3vw #00C853, 0 0 10vw #00C853, 0 0 10vw #00C853, 0 0 0.4vw #A7FFEB, 0.5vw 0.5vw 0.1vw #00796B;
+        color: #69F0AE;
+    }
+    50% {
+        text-shadow: 0 0 0.5vw #004D40, 0 0 1.5vw #004D40, 0 0 5vw #004D40, 0 0 5vw #004D40, 0 0 0.2vw #004D40, 0.5vw 0.5vw 0.1vw #00251A;
+        color: #00BFA5;
+    }
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px; /* Ajustement pour laisser de l'espace pour la zone emoji */
+    position: relative;
+    z-index: 1;
+    max-height: 60vh; /* Limite maximale pour les messages */
+    clear: both;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message span {
+    font-size: 12px;
+    color: #ccc;
+    display: block;
+    text-align: right;
+}
+
+.emoji-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px; /* Espace entre les emojis et la zone de saisie */
+    padding: 5px 0;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.emoji {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.emoji-inline {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+    z-index: 1;
+    margin-left: 10px; /* Espace entre le bouton "Afficher les emojis" et la zone de saisie */
+}
+
+button[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00e676;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333333;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: #00c853;
+}
+
+#toggle-emoji {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #0ff1ee; /* Nouvelle couleur hexadécimale */
+    color: #000; /* Texte en noir */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    float: left; /* Aligner le bouton à gauche */
+    margin-bottom: 10px;
+}
+
+#toggle-emoji:hover {
+    background-color: #00BFA5; /* Couleur pour le survol */
+}
+
+/* Bouton d'administration */
+.admin-button {
+    width: auto;
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6666; /* Rouge clair */
+    color: #fff; /* Texte en blanc */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 102, 102, 0.5); /* Ombre légère */
+}
+
+.admin-button:hover {
+    background-color: #ff4d4d; /* Rouge légèrement plus foncé au survol */
+    box-shadow: 0px 0px 15px rgba(255, 77, 77, 0.7); /* Ombre plus intense */
+}
+
+/* Bouton de déconnexion */
+.logout-button {
+    width: auto;
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e53935; /* Rouge standard */
+    color: #fff; /* Texte en blanc */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(229, 57, 53, 0.5); /* Ombre légère */
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Rouge plus foncé au survol */
+    box-shadow: 0px 0px 15px rgba(211, 47, 47, 0.7); /* Ombre plus intense */
+}
+
+/* Style pour les rôles des utilisateurs */
+.admin {
+    color: #00ff00; /* Vert clair pour les administrateurs */
+    font-weight: bold;
+}
+
+.moderator {
+    color: orange;
+    font-weight: bold;
+}
+
+.user {
+    color: violet;
+}
+
+@media (max-width: 500px) {
+    .shoutbox-container {
+        width: 100%;
+        padding: 15px;
+        height: auto; /* Ajuster la hauteur pour les écrans plus petits */
+    }
+
+    textarea, button {
+        padding: 8px;
+    }
+
+    .emoji {
+        width: 24px;
+        height: 24px;
+    }
+
+    .emoji-inline {
+        width: 16px;
+        height: 16px;
+    }
+
+    .admin-button, .logout-button, .moderation-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .moderation-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
